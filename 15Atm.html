@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ATM Machine</title>
+  <style>
+    body { font-family: Arial; background: #222; color: #fff; text-align: center; }
+    .atm { width: 350px; margin: 50px auto; padding: 20px; background: #333; border-radius: 10px; }
+    button { margin: 5px; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    .screen { background: #000; color: #0f0; padding: 15px; margin-bottom: 15px; border-radius: 5px; min-height: 60px; }
+    input { padding: 8px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <div class="atm">
+    <div class="screen" id="screen">Welcome! Enter PIN</div>
+    <input type="password" id="pin" placeholder="Enter PIN">
+    <button onclick="login()">Login</button>
+    <div id="menu" style="display:none;">
+      <button onclick="checkBalance()">Balance</button>
+      <button onclick="withdraw()">Withdraw</button>
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="fastCash()">Fast Cash</button>
+      <button onclick="miniStatement()">Mini Statement</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    let balance = 5000;
+    let pinCode = "1234";
+    let attempts = 0;
+    let transactions = [];
+
+    function login() {
+      let enteredPin = document.getElementById("pin").value;
+      if (enteredPin === pinCode) {
+        document.getElementById("screen").innerText = "Login Successful!";
+        document.getElementById("menu").style.display = "block";
+        attempts = 0;
+      } else {
+        attempts++;
+        document.getElementById("screen").innerText = "Invalid PIN! Attempts: " + attempts;
+        if (attempts >= 3) {
+          document.getElementById("screen").innerText = "Account Locked!";
+        }
+      }
+    }
+
+    function checkBalance() {
+      document.getElementById("screen").innerText = "Balance: ₹" + balance;
+      transactions.push("Checked Balance: ₹" + balance);
+    }
+
+    function withdraw() {
+      let amount = parseInt(prompt("Enter amount to withdraw:"));
+      if (amount > 0 && amount <= balance) {
+        balance -= amount;
+        document.getElementById("screen").innerText = "Withdrawn ₹" + amount + ". New Balance: ₹" + balance;
+        transactions.push("Withdrawn: ₹" + amount);
+      } else {
+        document.getElementById("screen").innerText = "Invalid amount!";
+      }
+    }
+
+    function deposit() {
+      let amount = parseInt(prompt("Enter amount to deposit:"));
+      if (amount > 0) {
+        balance += amount;
+        document.getElementById("screen").innerText = "Deposited ₹" + amount + ". New Balance: ₹" + balance;
+        transactions.push("Deposited: ₹" + amount);
+      } else {
+        document.getElementById("screen").innerText = "Invalid amount!";
+      }
+    }
+
+    function fastCash() {
+      let options = [500, 1000, 2000];
+      let choice = prompt("Choose Fast Cash: 500, 1000, 2000");
+      let amount = parseInt(choice);
+      if (options.includes(amount) && amount <= balance) {
+        balance -= amount;
+        document.getElementById("screen").innerText = "Fast Cash: ₹" + amount + ". Balance: ₹" + balance;
+        transactions.push("Fast Cash: ₹" + amount);
+      } else {
+        document.getElementById("screen").innerText = "Invalid Fast Cash option!";
+      }
+    }
+
+    function miniStatement() {
+      let lastFive = transactions.slice(-5).join("\n");
+      document.getElementById("screen").innerText = "Mini Statement:\n" + lastFive;
+    }
+
+    function logout() {
+      document.getElementById("screen").innerText = "Logged out!";
+      document.getElementById("menu").style.display = "none";
+    }
+  </script>
+</body>
+</html>

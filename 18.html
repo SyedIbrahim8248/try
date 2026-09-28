@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cricbuzz</title>
+  <style>
+    body {
+      margin: 0; font-family: Arial, sans-serif; background: #f4f4f4;
+    }
+    header {
+      background: #006400; color: #fff; padding: 15px; text-align: center;
+    }
+    nav {
+      background: #004d00; padding: 10px; text-align: center;
+    }
+    nav a {
+      color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold;
+    }
+    .container {
+      max-width: 1000px; margin: auto; padding: 20px;
+    }
+    .scorecard, .news {
+      background: #fff; padding: 20px; margin-bottom: 20px;
+      border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .match {
+      border-bottom: 1px solid #ddd; padding: 10px 0;
+    }
+    .match:last-child { border-bottom: none; }
+    footer {
+      background: #006400; color: #fff; text-align: center; padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Cricbuzz</h1>
+    <p>Personal Cricket Updates</p>
+  </header>
+  <nav>
+    <a href="#scores">Live Scores</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="scores" class="scorecard">
+      <h2>Live Scores</h2>
+      <div class="match">
+        <strong>India vs Australia</strong><br>
+        India: 250/6 (45 overs)<br>
+        Australia: Yet to Bat
+      </div>
+      <div class="match">
+        <strong>England vs Pakistan</strong><br>
+        England: 310/8 (50 overs)<br>
+        Pakistan: 120/3 (25 overs)
+      </div>
+    </section>
+
+    <section id="news" class="news">
+      <h2>Latest News</h2>
+      <p><strong>India clinch series win!</strong> India defeated Australia by 5 wickets to secure the ODI series.</p>
+      <p><strong>Player Spotlight:</strong> Babar Azam scores a brilliant century against England.</p>
+    </section>
+
+    <section id="contact" class="news">
+      <h2>Contact</h2>
+      <p>Email: mycricbuzz@example.com</p>
+      <p>Follow me on Twitter: @mycricbuzz</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 My Cricbuzz | Built with HTML, CSS, JS</p>
+  </footer>
+
+  <script>
+    // Example JS: Auto-refresh scores every 10 seconds (dummy data)
+    setInterval(() => {
+      const matches = document.querySelectorAll('.match');
+      matches[0].innerHTML = "<strong>India vs Australia</strong><br>India: " 
+        + (250 + Math.floor(Math.random()*10)) + "/6 (45 overs)<br>Australia: Yet to Bat";
+    }, 10000);
+  </script>
+</body>
+</html>

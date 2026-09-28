@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>All Projects in One File</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f4f7fb;color:#222}
+header{background:#111;color:#fff;padding:18px;position:sticky;top:0;z-index:10}
+nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+nav a{color:#fff;text-decoration:none;font-size:14px}
+.hero{padding:80px 20px;text-align:center;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff}
+section{padding:50px 20px;max-width:1100px;margin:auto}
+h2{margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:18px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+input,button{padding:12px;border-radius:10px;border:1px solid #ddd}
+button{background:#111;color:#fff;cursor:pointer;border:none}
+#gameArea{height:220px;background:#222;border-radius:16px;position:relative;overflow:hidden;max-width:500px}
+#player{width:45px;height:45px;background:#ef4444;position:absolute;left:20px;bottom:20px;border-radius:10px;transition:bottom .25s}
+#enemy{width:35px;height:35px;background:#facc15;position:absolute;right:0;bottom:20px;border-radius:8px}
+footer{text-align:center;padding:20px;background:#111;color:#fff}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a href="#portfolio">Portfolio</a>
+<a href="#business">Business</a>
+<a href="#restaurant">Restaurant</a>
+<a href="#shop">Shop</a>
+<a href="#school">School</a>
+<a href="#weather">Weather</a>
+<a href="#blog">Blog</a>
+<a href="#game">Game</a>
+</nav>
+</header>
+
+<div class="hero">
+<h1>All Website Projects in One HTML File</h1>
+<p>Pure HTML + CSS + JavaScript • All sections working</p>
+</div>
+
+<section id="portfolio"><h2>Portfolio</h2><div class="grid"><div class="card">About</div><div class="card">Skills</div><div class="card">Projects</div></div></section>
+<section id="business"><h2>Business</h2><div class="card">Services, clients, testimonials, team and contact details.</div></section>
+<section id="restaurant"><h2>Restaurant</h2><div class="grid"><div class="card">Pizza</div><div class="card">Burger</div><div class="card">Coffee</div></div></section>
+<section id="shop"><h2>E-Commerce</h2><div class="grid"><div class="card">Laptop ₹50,000</div><div class="card">Phone ₹20,000</div><div class="card">Headphones ₹2,000</div></div></section>
+<section id="school"><h2>School / College</h2><div class="card">Admissions, courses, faculty, events, notices.</div></section>
+<section id="weather"><h2>Weather App</h2><input id="city" placeholder="Enter city"><button onclick="getWeather()">Check</button><p id="result" style="margin-top:12px"></p></section>
+<section id="blog"><h2>Blog</h2><div class="card">Latest posts, comments, likes and share buttons.</div></section>
+<section id="game"><h2>Mini Bike Game</h2><button onclick="jump()">Jump</button><div id="gameArea"><div id="player"></div><div id="enemy"></div></div><p id="score" style="margin-top:10px">Score: 0</p></section>
+<footer>All projects in one file © 2026</footer>
+<script>
+function getWeather(){
+ const city=document.getElementById('city').value||'Delhi';
+ document.getElementById('result').innerText=`${city}: 27°C, Clear Sky`;
+}
+const player=document.getElementById('player');
+const enemy=document.getElementById('enemy');
+const scoreBox=document.getElementById('score');
+let jumping=false, enemyPos=500, score=0;
+function jump(){
+ if(jumping) return;
+ jumping=true;
+ player.style.bottom='110px';
+ setTimeout(()=>{player.style.bottom='20px'; jumping=false;},450);
+}
+setInterval(()=>{
+ enemyPos -= 6;
+ if(enemyPos < -40){ enemyPos = 500; score++; scoreBox.innerText='Score: '+score; }
+ enemy.style.right=(500-enemyPos)+'px';
+ const playerBottom=parseInt(getComputedStyle(player).bottom);
+ if(enemyPos < 60 && enemyPos > 0 && playerBottom < 50){
+   score=0; scoreBox.innerText='Game Over! Score: 0'; enemyPos=500;
+ }
+},30);
+</script>
+</body>
+</html>

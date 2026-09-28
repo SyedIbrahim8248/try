@@ -1,0 +1,268 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Portfolio</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;line-height:1.6;scroll-behavior:smooth}
+    nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:rgba(15,23,42,.9);backdrop-filter:blur(8px);z-index:1000}
+    nav a{color:#fff;text-decoration:none;margin-left:20px}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px;background:linear-gradient(135deg,#1e293b,#2563eb)}
+    .hero h1{font-size:3rem}
+    .hero p{margin:15px 0;font-size:1.1rem;color:#dbeafe}
+    .btn{display:inline-block;padding:12px 24px;background:#fff;color:#2563eb;border-radius:30px;text-decoration:none;font-weight:bold;transition:.3s}
+    .btn:hover{transform:translateY(-3px)}
+    section{padding:80px 8%}
+    h2{font-size:2rem;margin-bottom:20px;text-align:center}
+    .about,.contact{max-width:800px;margin:auto;text-align:center}
+    .skills,.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .card{background:#1e293b;padding:25px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.3s}
+    .card:hover{transform:translateY(-5px)}
+    .progress{height:10px;background:#334155;border-radius:20px;overflow:hidden;margin-top:10px}
+    .progress span{display:block;height:100%;background:#3b82f6}
+    form{display:flex;flex-direction:column;gap:15px}
+    input,textarea{padding:12px;border:none;border-radius:10px;outline:none}
+    button{padding:12px;border:none;border-radius:30px;background:#3b82f6;color:#fff;font-size:1rem;cursor:pointer}
+    footer{text-align:center;padding:20px;background:#020617}
+    .fade{opacity:0;transform:translateY(30px);transition:all .6s ease}
+    .fade.show{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <nav>
+    <h3>MyPortfolio</h3>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div>
+      <h1>Hi, I'm Your Name</h1>
+      <p>Frontend Developer | HTML CSS JavaScript Expert</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </section>
+
+  <section id="about" class="about fade">
+    <h2>About Me</h2>
+    <p>I create modern, responsive and dynamic websites using pure HTML, CSS and JavaScript. This single-file portfolio is perfect for GitHub projects and portfolio showcases.</p>
+  </section>
+
+  <section id="skills" class="fade">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>HTML</h3>
+        <div class="progress"><span style="width:95%"></span></div>
+      </div>
+      <div class="card">
+        <h3>CSS</h3>
+        <div class="progress"><span style="width:90%"></span></div>
+      </div>
+      <div class="card">
+        <h3>JavaScript</h3>
+        <div class="progress"><span style="width:85%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card"><h3>Weather App</h3><p>Real-time weather using API.</p></div>
+      <div class="card"><h3>Bike Racing Game</h3><p>Fun JS game with controls.</p></div>
+      <div class="card"><h3>To-Do App</h3><p>Task manager with local storage.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade">
+    <h2>Contact Me</h2>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="msg" style="margin-top:15px"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 My Portfolio | Built with HTML CSS JS</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show');
+      });
+    });
+
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+    function sendMessage(e){
+      e.preventDefault();
+      document.getElementById('msg').innerText = '✅ Message sent successfully!';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Portfolio</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;line-height:1.6;scroll-behavior:smooth}
+    nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:rgba(15,23,42,.9);backdrop-filter:blur(8px);z-index:1000}
+    nav a{color:#fff;text-decoration:none;margin-left:20px}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px;background:linear-gradient(135deg,#1e293b,#2563eb)}
+    .hero h1{font-size:3rem}
+    .hero p{margin:15px 0;font-size:1.1rem;color:#dbeafe}
+    .btn{display:inline-block;padding:12px 24px;background:#fff;color:#2563eb;border-radius:30px;text-decoration:none;font-weight:bold;transition:.3s}
+    .btn:hover{transform:translateY(-3px)}
+    section{padding:80px 8%}
+    h2{font-size:2rem;margin-bottom:20px;text-align:center}
+    .about,.contact{max-width:800px;margin:auto;text-align:center}
+    .skills,.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .card{background:#1e293b;padding:25px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.3s}
+    .card:hover{transform:translateY(-5px)}
+    .progress{height:10px;background:#334155;border-radius:20px;overflow:hidden;margin-top:10px}
+    .progress span{display:block;height:100%;background:#3b82f6}
+    form{display:flex;flex-direction:column;gap:15px}
+    input,textarea{padding:12px;border:none;border-radius:10px;outline:none}
+    button{padding:12px;border:none;border-radius:30px;background:#3b82f6;color:#fff;font-size:1rem;cursor:pointer}
+    footer{text-align:center;padding:20px;background:#020617}
+    .fade{opacity:0;transform:translateY(30px);transition:all .6s ease}
+    .fade.show{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <nav>
+    <h3>MyPortfolio</h3>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div>
+      <h1>Hi, I'm Syed Ibrahim</h1>
+      <p>Frontend Developer | HTML CSS JavaScript Expert</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </section>
+
+  <section id="about" class="about fade">
+    <h2>About Me</h2>
+    <p>I create modern, responsive and dynamic websites using pure HTML, CSS and JavaScript. This single-file portfolio is perfect for GitHub projects and portfolio showcases.</p>
+  </section>
+
+  <section id="skills" class="fade">
+    <h2>My Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>HTML</h3>
+        <div class="progress"><span style="width:95%"></span></div>
+      </div>
+      <div class="card">
+        <h3>CSS</h3>
+        <div class="progress"><span style="width:90%"></span></div>
+      </div>
+      <div class="card">
+        <h3>JavaScript</h3>
+        <div class="progress"><span style="width:85%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card project-card" onclick="showProject('Weather App','Real-time weather updates with smooth API-based city search and dynamic UI.')"><h3>Weather App</h3><p>Real-time weather using API.</p></div>
+      <div class="card project-card" onclick="showProject('Bike Racing Game','Smooth keyboard controls, obstacle movement and score tracking using JavaScript.')"><h3>Bike Racing Game</h3><p>Fun JS game with controls.</p></div>
+      <div class="card project-card" onclick="showProject('To-Do App','Fast task manager with local storage, edit/delete and instant updates.')"><h3>To-Do App</h3><p>Task manager with local storage.</p></div>
+    </div>
+    <div id="projectModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;align-items:center;justify-content:center;padding:20px">
+      <div style="background:#1e293b;padding:30px;border-radius:20px;max-width:500px;width:100%;text-align:center">
+        <h3 id="modalTitle"></h3>
+        <p id="modalText" style="margin:15px 0"></p>
+        <button onclick="closeProject()">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade">
+    <h2>Contact Me</h2>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="msg" style="margin-top:15px"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 My Portfolio | Built with HTML CSS JS</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show');
+      });
+    });
+
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+    function showProject(title, text){
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalText').innerText = text;
+      document.getElementById('projectModal').style.display = 'flex';
+    }
+
+    function closeProject(){
+      document.getElementById('projectModal').style.display = 'none';
+    }
+
+    function sendMessage(e){
+      e.preventDefault();
+      document.getElementById('msg').innerText = '✅ Message sent successfully!';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+

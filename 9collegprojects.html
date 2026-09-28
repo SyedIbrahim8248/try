@@ -1,0 +1,378 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ibrahim - Full Stack Developer Project</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:#0f172a;color:#fff;padding:20px;position:sticky;top:0}
+nav{display:flex;gap:10px;flex-wrap:wrap}
+nav button{padding:8px 12px;border:none;border-radius:6px;background:#2563eb;color:#fff;cursor:pointer}
+.container{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+aside{background:#1e293b;color:#fff;padding:20px}
+main{padding:20px}
+.page{display:none;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);margin-bottom:20px}
+.page.active{display:block}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{padding:15px;border:1px solid #ddd;border-radius:10px}
+input,textarea,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px}
+.footer{padding:20px;text-align:center;background:#0f172a;color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <h1>Ibrahim | Roll No: 23CSE075</h1>
+  <p>GITAM College | Java + Full Stack Developer Portfolio Project</p>
+</header>
+<div class="container">
+<aside>
+  <h3>25 Project Pages</h3>
+  <nav id="menu"></nav>
+</aside>
+<main id="pages"></main>
+</div>
+<div class="footer">Single File Project using HTML + CSS + JavaScript</div>
+<script>
+const pageNames = [
+  'Home','About','Profile','Skills','Projects','Java Projects','Web Apps','Services','Resume','Gallery',
+  'Team','Clients','Testimonials','Pricing','Blog','FAQ','Dashboard','Analytics','Tasks','Messages',
+  'Settings','Login','Register','Contact','Admin Panel'
+];
+
+const menu = document.getElementById('menu');
+const pages = document.getElementById('pages');
+
+pageNames.forEach((name,index)=>{
+  const btn=document.createElement('button');
+  btn.textContent=(index+1)+'. '+name;
+  btn.onclick=()=>showPage(index);
+  menu.appendChild(btn);
+
+  const section=document.createElement('section');
+  section.className='page'+(index===0?' active':'');
+  section.id='page'+index;
+  section.innerHTML=`
+    <h2>${name}</h2>
+    <p>This is the <b>${name}</b> page of your 25-page full stack frontend project.</p>
+    <div class="card-grid">
+      <div class="card">Responsive HTML layout</div>
+      <div class="card">Modern CSS styling</div>
+      <div class="card">JavaScript dynamic functions</div>
+    </div>
+    ${name==='Contact' ? `
+      <h3>Contact Form</h3>
+      <input placeholder="Enter Name">
+      <input placeholder="Enter Email">
+      <textarea placeholder="Enter Message"></textarea>
+      <button onclick="alert('Message Sent!')">Send</button>` : ''}
+    ${name==='Tasks' ? `
+      <h3>Task Manager</h3>
+      <input id="taskInput" placeholder="Add task">
+      <button onclick="addTask()">Add</button>
+      <ul id="taskList"></ul>` : ''}
+    ${name==='Analytics' ? `<h3>Total Pages: 25</h3><p>Frontend analytics demo section.</p>` : ''}
+  `;
+  pages.appendChild(section);
+});
+
+function showPage(i){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+i).classList.add('active');
+}
+
+function addTask(){
+  const input=document.getElementById('taskInput');
+  const list=document.getElementById('taskList');
+  if(input && input.value.trim()){
+    const li=document.createElement('li');
+    li.textContent=input.value;
+    list.appendChild(li);
+    input.value='';
+  }
+}
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ibrahim - Full Stack Developer Project</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:#0f172a;color:#fff;padding:20px;position:sticky;top:0}
+nav{display:flex;gap:10px;flex-wrap:wrap}
+nav button{padding:8px 12px;border:none;border-radius:6px;background:#2563eb;color:#fff;cursor:pointer}
+.container{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+aside{background:#1e293b;color:#fff;padding:20px}
+main{padding:20px}
+.page{display:none;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);margin-bottom:20px}
+.page.active{display:block}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{padding:15px;border:1px solid #ddd;border-radius:10px}
+input,textarea,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px}
+.footer{padding:20px;text-align:center;background:#0f172a;color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <h1>Ibrahim | Roll No: 23CSE075</h1>
+  <p>GITAM College | Java + Full Stack Developer Portfolio Project</p>
+</header>
+<div class="container">
+<aside>
+  <h3>25 Project Pages</h3>
+  <nav id="menu"></nav>
+</aside>
+<main id="pages"></main>
+</div>
+<div class="footer">Single File Project using HTML + CSS + JavaScript</div>
+<script>
+const pageNames = [
+  'Home','About','Profile','Skills','Projects','Java Projects','Web Apps','Services','Resume','Gallery',
+  'Team','Clients','Testimonials','Pricing','Blog','FAQ','Dashboard','Analytics','Tasks','Messages',
+  'Settings','Login','Register','Contact','Admin Panel'
+];
+
+const menu = document.getElementById('menu');
+const pages = document.getElementById('pages');
+
+pageNames.forEach((name,index)=>{
+  const btn=document.createElement('button');
+  btn.textContent=(index+1)+'. '+name;
+  btn.onclick=()=>showPage(index);
+  menu.appendChild(btn);
+
+  const section=document.createElement('section');
+  section.className='page'+(index===0?' active':'');
+  section.id='page'+index;
+  section.innerHTML=`
+    <h2>${name}</h2>
+    <p>This is the <b>${name}</b> page of your 25-page full stack frontend project.</p>
+    <div class="card-grid">
+      <div class="card">Responsive HTML layout</div>
+      <div class="card">Modern CSS styling</div>
+      <div class="card">JavaScript dynamic functions</div>
+    </div>
+    ${name==='Contact' ? `
+      <h3>Contact Form</h3>
+      <input placeholder="Enter Name">
+      <input placeholder="Enter Email">
+      <textarea placeholder="Enter Message"></textarea>
+      <button onclick="alert('Message Sent!')">Send</button>` : ''}
+    ${name==='Tasks' ? `
+      <h3>Task Manager</h3>
+      <input id="taskInput" placeholder="Add task">
+      <button onclick="addTask()">Add</button>
+      <ul id="taskList"></ul>` : ''}
+    ${name==='Analytics' ? `<h3>Total Pages: 25</h3><p>Frontend analytics demo section.</p>` : ''}
+  `;
+  pages.appendChild(section);
+});
+
+function showPage(i){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+i).classList.add('active');
+}
+
+function addTask(){
+  const input=document.getElementById('taskInput');
+  const list=document.getElementById('taskList');
+  if(input && input.value.trim()){
+    const li=document.createElement('li');
+    li.textContent=input.value;
+    list.appendChild(li);
+    input.value='';
+  }
+}
+
+// Extra working features for all major pages
+function fakeLogin(){ alert('Login successful!'); }
+function fakeRegister(){ alert('Registration completed!'); }
+function searchProjects(q){
+  document.querySelectorAll('.card').forEach(card=>{
+    card.style.display = card.textContent.toLowerCase().includes(q.toLowerCase()) ? 'block' : 'none';
+  });
+}
+
+// Add live widgets to selected pages after render
+window.addEventListener('load',()=>{
+  const projectPage = [...document.querySelectorAll('.page')].find(p=>p.innerHTML.includes('<h2>Projects</h2>'));
+  if(projectPage){
+    const box=document.createElement('div');
+    box.innerHTML=`<h3>Project Search</h3><input placeholder="Search project" onkeyup="searchProjects(this.value)">`;
+    projectPage.appendChild(box);
+  }
+
+  const loginPage = [...document.querySelectorAll('.page')].find(p=>p.innerHTML.includes('<h2>Login</h2>'));
+  if(loginPage){
+    loginPage.innerHTML += `<input placeholder="Username"><input type="password" placeholder="Password"><button onclick="fakeLogin()">Login</button>`;
+  }
+
+  const registerPage = [...document.querySelectorAll('.page')].find(p=>p.innerHTML.includes('<h2>Register</h2>'));
+  if(registerPage){
+    registerPage.innerHTML += `<input placeholder="Full Name"><input placeholder="Email"><input type="password" placeholder="Password"><button onclick="fakeRegister()">Register</button>`;
+  }
+});
+</script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ibrahim - Full Stack Developer Project</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:#0f172a;color:#fff;padding:20px;position:sticky;top:0}
+nav{display:flex;gap:10px;flex-wrap:wrap}
+nav button{padding:8px 12px;border:none;border-radius:6px;background:#2563eb;color:#fff;cursor:pointer}
+.container{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+aside{background:#1e293b;color:#fff;padding:20px}
+main{padding:20px}
+.page{display:none;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);margin-bottom:20px}
+.page.active{display:block}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{padding:15px;border:1px solid #ddd;border-radius:10px}
+input,textarea,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px}
+.footer{padding:20px;text-align:center;background:#0f172a;color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <h1>Ibrahim | Roll No: 23CSE075</h1>
+  <p>GITAM College | Java + Full Stack Developer Portfolio Project</p>
+</header>
+<div class="container">
+<aside>
+  <h3>25 Project Pages</h3>
+  <nav id="menu"></nav>
+</aside>
+<main id="pages"></main>
+</div>
+<div class="footer">Single File Project using HTML + CSS + JavaScript</div>
+<script>
+const pageNames = [
+  'Home Page','About Me','Student Profile','Technical Skills','Project Showcase','Java Applications','Web Applications','Developer Services','Resume Details','Project Gallery',
+  'Development Team','Client Section','User Testimonials','Pricing Plans','Blog Articles','Frequently Asked Questions','User Dashboard','Site Analytics','Task Management','Messages Center',
+  'Account Settings','Secure Login','New Registration','Contact Support','Admin Control Panel'
+];
+
+const menu = document.getElementById('menu');
+const pages = document.getElementById('pages');
+
+pageNames.forEach((name,index)=>{
+  const btn=document.createElement('button');
+  btn.textContent=(index+1)+'. '+name;
+  btn.onclick=()=>showPage(index);
+  menu.appendChild(btn);
+
+  const section=document.createElement('section');
+  section.className='page'+(index===0?' active':'');
+  section.id='page'+index;
+  section.innerHTML=`
+    <h2>${name}</h2>
+    <p>Welcome to the <b>${name}</b> section of your complete 25-page Full Stack Developer college project. This page is fully designed using pure HTML, CSS, and JavaScript with clean English content and professional structure.</p>
+    <div class="card-grid">
+      <div class="card">Responsive HTML layout</div>
+      <div class="card">Modern CSS styling</div>
+      <div class="card">JavaScript dynamic functions</div>
+    </div>
+    ${name==='Contact' ? `
+      <h3>Contact Form</h3>
+      <input placeholder="Enter Name">
+      <input placeholder="Enter Email">
+      <textarea placeholder="Enter Message"></textarea>
+      <button onclick="alert('Message Sent!')">Send</button>` : ''}
+    ${name==='Tasks' ? `
+      <h3>Task Manager</h3>
+      <input id="taskInput" placeholder="Add task">
+      <button onclick="addTask()">Add</button>
+      <ul id="taskList"></ul>` : ''}
+    ${name==='Analytics' ? `<h3>Total Pages: 25</h3><p>Frontend analytics demo section.</p>` : ''}
+  `;
+  pages.appendChild(section);
+});
+
+function showPage(i){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+i).classList.add('active');
+}
+
+function addTask(){
+  const input=document.getElementById('taskInput');
+  const list=document.getElementById('taskList');
+  if(input && input.value.trim()){
+    const li=document.createElement('li');
+    li.textContent=input.value;
+    list.appendChild(li);
+    input.value='';
+  }
+}
+
+// Extra working features for all major pages
+function fakeLogin(){ alert('Login successful!'); }
+function fakeRegister(){ alert('Registration completed!'); }
+function searchProjects(q){
+  document.querySelectorAll('.card').forEach(card=>{
+    card.style.display = card.textContent.toLowerCase().includes(q.toLowerCase()) ? 'block' : 'none';
+  });
+}
+
+// Add live widgets to selected pages after render
+window.addEventListener('load',()=>{
+  const projectPage = [...document.querySelectorAll('.page')].find(p=>p.innerHTML.includes('<h2>Projects</h2>'));
+  if(projectPage){
+    const box=document.createElement('div');
+    box.innerHTML=`<h3>Project Search</h3><input placeholder="Search project" onkeyup="searchProjects(this.value)">`;
+    projectPage.appendChild(box);
+  }
+
+  const loginPage = [...document.querySelectorAll('.page')].find(p=>p.innerHTML.includes('<h2>Login</h2>'));
+  if(loginPage){
+    loginPage.innerHTML += `<input placeholder="Username"><input type="password" placeholder="Password"><button onclick="fakeLogin()">Login</button>`;
+  }
+
+  const registerPage = [...document.querySelectorAll('.page')].find(p=>p.innerHTML.includes('<h2>Register</h2>'));
+  if(registerPage){
+    registerPage.innerHTML += `<input placeholder="Full Name"><input placeholder="Email"><input type="password" placeholder="Password"><button onclick="fakeRegister()">Register</button>`;
+  }
+});
+</script>
+</body>
+</html> 

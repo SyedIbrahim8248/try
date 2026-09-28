@@ -1,0 +1,125 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Syed Ibrahim Projects</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+    nav { background:#333; color:#fff; padding:10px; text-align:center; }
+    nav a { color:#fff; margin:0 15px; text-decoration:none; }
+    section { padding:20px; display:none; }
+    section.active { display:block; }
+    h2 { color:#333; }
+    .game-board { display:grid; grid-template-columns:repeat(3,100px); gap:5px; }
+    .cell { width:100px; height:100px; background:#ddd; display:flex; align-items:center; justify-content:center; font-size:2em; cursor:pointer; }
+    #carCanvas { background:#eee; border:1px solid #333; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" onclick="showSection('ticTacToe')">Tic Tac Toe</a>
+    <a href="#" onclick="showSection('carRacing')">Car Racing</a>
+    <a href="#" onclick="showSection('calculator')">Calculator</a>
+    <a href="#" onclick="showSection('weather')">Weather</a>
+    <a href="#" onclick="showSection('location')">Location</a>
+  </nav>
+
+  <!-- Tic Tac Toe -->
+  <section id="ticTacToe" class="active">
+    <h2>Tic Tac Toe</h2>
+    <div class="game-board" id="board"></div>
+    <p id="winner"></p>
+  </section>
+
+  <!-- Car Racing -->
+  <section id="carRacing">
+    <h2>Car Racing</h2>
+    <canvas id="carCanvas" width="300" height="400"></canvas>
+  </section>
+
+  <!-- Calculator -->
+  <section id="calculator">
+    <h2>Calculator</h2>
+    <input type="text" id="calcDisplay" readonly>
+    <div>
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('+')">+</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="clearCalc()">C</button>
+    </div>
+  </section>
+
+  <!-- Weather -->
+  <section id="weather">
+    <h2>Weather App</h2>
+    <input type="text" id="city" placeholder="Enter city">
+    <button onclick="getWeather()">Get Weather</button>
+    <p id="weatherResult"></p>
+  </section>
+
+  <!-- Location -->
+  <section id="location">
+    <h2>Location App</h2>
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="locationResult"></p>
+  </section>
+
+<script>
+  // Navigation
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  // Tic Tac Toe
+  let board = Array(9).fill('');
+  let current = 'X';
+  const boardDiv = document.getElementById('board');
+  board.forEach((_,i)=>{
+    let cell=document.createElement('div');
+    cell.className='cell';
+    cell.onclick=()=>makeMove(i,cell);
+    boardDiv.appendChild(cell);
+  });
+  function makeMove(i,cell){
+    if(board[i]) return;
+    board[i]=current;
+    cell.textContent=current;
+    if(checkWin()){ document.getElementById('winner').textContent=current+' wins!'; }
+    current=current==='X'?'O':'X';
+  }
+  function checkWin(){
+    const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    return wins.some(w=>w.every(i=>board[i]===current));
+  }
+
+  // Car Racing (simple animation)
+  const canvas=document.getElementById('carCanvas');
+  const ctx=canvas.getContext('2d');
+  let carY=350;
+  function drawCar(){ ctx.clearRect(0,0,300,400); ctx.fillStyle='blue'; ctx.fillRect(140,carY,20,40); }
+  function moveCar(){ carY-=2; if(carY<0) carY=350; drawCar(); }
+  setInterval(moveCar,50);
+
+  // Calculator
+  let calc='';
+  function press(val){ calc+=val; document.getElementById('calcDisplay').value=calc; }
+  function calculate(){ document.getElementById('calcDisplay').value=eval(calc); calc=''; }
+  function clearCalc(){ calc=''; document.getElementById('calcDisplay').value=''; }
+
+  // Weather (dummy API call)
+  async function getWeather(){
+    let city=document.getElementById('city').value;
+    document.getElementById('weatherResult').textContent="Weather in "+city+": Sunny 25°C";
+  }
+
+  // Location
+  function getLocation(){
+    navigator.geolocation.getCurrentPosition(pos=>{
+      document.getElementById('locationResult').textContent="Lat:"+pos.coords.latitude+" Lon:"+pos.coords.longitude;
+    });
+  }
+</script>
+</body>
+</html> 

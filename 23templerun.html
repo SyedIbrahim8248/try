@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temple Run - Simple Version</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    #game {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(#444, #111);
+      overflow: hidden;
+    }
+    #runner {
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+      width: 50px;
+      height: 50px;
+      background: gold;
+      border-radius: 10px;
+    }
+    .obstacle {
+      position: absolute;
+      bottom: 50px;
+      width: 50px;
+      height: 50px;
+      background: crimson;
+    }
+    #score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <div id="runner"></div>
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script>
+    const runner = document.getElementById('runner');
+    const game = document.getElementById('game');
+    const scoreDisplay = document.getElementById('score');
+    let isJumping = false;
+    let score = 0;
+
+    // Jump function
+    document.addEventListener('keydown', e => {
+      if (e.code === 'Space' && !isJumping) {
+        jump();
+      }
+    });
+
+    function jump() {
+      isJumping = true;
+      let position = 0;
+      const upInterval = setInterval(() => {
+        if (position >= 150) {
+          clearInterval(upInterval);
+          const downInterval = setInterval(() => {
+            if (position <= 0) {
+              clearInterval(downInterval);
+              isJumping = false;
+            }
+            position -= 5;
+            runner.style.bottom = 50 + position + 'px';
+          }, 20);
+        }
+        position += 5;
+        runner.style.bottom = 50 + position + 'px';
+      }, 20);
+    }
+
+    // Obstacle creation
+    function createObstacle() {
+      const obstacle = document.createElement('div');
+      obstacle.classList.add('obstacle');
+      obstacle.style.left = game.offsetWidth + 'px';
+      game.appendChild(obstacle);
+
+      let moveInterval = setInterval(() => {
+        let obstacleLeft = parseInt(obstacle.style.left);
+        if (obstacleLeft < -50) {
+          clearInterval(moveInterval);
+          game.removeChild(obstacle);
+          score++;
+          scoreDisplay.textContent = 'Score: ' + score;
+        } else {
+          obstacle.style.left = obstacleLeft - 5 + 'px';
+        }
+
+        // Collision detection
+        let runnerBottom = parseInt(runner.style.bottom);
+        if (obstacleLeft < 100 && obstacleLeft > 0 && runnerBottom <= 100) {
+          alert('Game Over! Final Score: ' + score);
+          window.location.reload();
+        }
+      }, 20);
+
+      setTimeout(createObstacle, Math.random() * 3000 + 2000);
+    }
+
+    createObstacle();
+  </script>
+</body>
+</html>

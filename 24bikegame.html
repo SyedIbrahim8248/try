@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bike Racing Game</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #gameArea {
+      width: 400px;
+      height: 600px;
+      margin: 20px auto;
+      background: linear-gradient(gray, darkgray);
+      position: relative;
+      overflow: hidden;
+      border: 3px solid black;
+    }
+
+    #bike {
+      width: 40px;
+      height: 60px;
+      background: red;
+      position: absolute;
+      bottom: 20px;
+      left: 180px; /* center start */
+    }
+
+    .obstacle {
+      width: 40px;
+      height: 40px;
+      background: black;
+      position: absolute;
+      top: 0;
+    }
+
+    #controls {
+      margin-top: 15px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bike Racing Game</h1>
+  <div id="gameArea">
+    <div id="bike"></div>
+  </div>
+  <div id="controls">
+    <button onclick="moveLeft()">Left</button>
+    <button onclick="moveRight()">Right</button>
+    <button onclick="startGame()">Start</button>
+  </div>
+
+  <script>
+    let bike = document.getElementById("bike");
+    let gameArea = document.getElementById("gameArea");
+    let bikePosition = 180;
+    let gameInterval;
+
+    function moveLeft() {
+      if (bikePosition > 0) {
+        bikePosition -= 20;
+        bike.style.left = bikePosition + "px";
+      }
+    }
+
+    function moveRight() {
+      if (bikePosition < 360) {
+        bikePosition += 20;
+        bike.style.left = bikePosition + "px";
+      }
+    }
+
+    function startGame() {
+      clearInterval(gameInterval);
+      gameInterval = setInterval(createObstacle, 2000);
+    }
+
+    function createObstacle() {
+      let obstacle = document.createElement("div");
+      obstacle.classList.add("obstacle");
+      obstacle.style.left = Math.floor(Math.random() * 360) + "px";
+      gameArea.appendChild(obstacle);
+
+      let move = setInterval(() => {
+        let top = parseInt(obstacle.style.top || 0);
+        if (top > 600) {
+          clearInterval(move);
+          obstacle.remove();
+        } else {
+          obstacle.style.top = top + 5 + "px";
+        }
+        checkCollision(obstacle, move);
+      }, 30);
+    }
+
+    function checkCollision(obstacle, move) {
+      let bikeRect = bike.getBoundingClientRect();
+      let obsRect = obstacle.getBoundingClientRect();
+
+      if (
+        bikeRect.left < obsRect.right &&
+        bikeRect.right > obsRect.left &&
+        bikeRect.top < obsRect.bottom &&
+        bikeRect.bottom > obsRect.top
+      ) {
+        alert("Game Over!");
+        clearInterval(gameInterval);
+        clearInterval(move);
+        obstacle.remove();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abul Hasan - Architecture Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f4f4f4; }
+    header { background:#333; color:#fff; padding:20px; text-align:center; }
+    nav { background:#555; padding:10px; text-align:center; }
+    nav a { color:#fff; margin:0 15px; text-decoration:none; }
+    section { padding:20px; margin:20px; background:#fff; border-radius:8px; }
+    h2 { color:#333; border-bottom:2px solid #ddd; padding-bottom:5px; }
+    ul { list-style:none; padding:0; }
+    li { margin:5px 0; }
+    footer { background:#333; color:#fff; text-align:center; padding:10px; margin-top:20px; }
+    .projects div { margin-bottom:15px; padding:10px; border:1px solid #ddd; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Abul Hasan</h1>
+    <p>Creative, hardworking and ambitious architect</p>
+  </header>
+
+  <nav>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#thesis">Thesis</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="education">
+    <h2>Education Qualification</h2>
+    <ul>
+      <li>High Secondary Education - Deen Dayal Upadhyay Inter College, Bareilly</li>
+      <li>Secondary Education - Fatima Leyan Public School, Bareilly</li>
+      <li>Pursuing Bachelor of Architecture - MDU Rohtak, Ganga Institute of Architecture</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Software Skills</h2>
+    <ul>
+      <li>AutoCAD, SketchUp, Lumion, D5 Render</li>
+      <li>Photoshop, Corel Draw, Canva</li>
+      <li>MS Office, Tally</li>
+      <li>Basic Computer Knowledge</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects Completed</h2>
+    <div><strong>3rd Semester:</strong> Doctor's Residence (House-Cum-Clinic), Bahadurgarh</div>
+    <div><strong>4th Semester:</strong> Urban Community Centre, Bhimtal</div>
+    <div><strong>5th Semester:</strong> Group Housing, New Delhi</div>
+    <div><strong>6th Semester:</strong> Shopping Complex & Multiplex, Bahadurgarh</div>
+    <div><strong>7th Semester:</strong> 3 Star Luxury Hotel & Haryana Haat</div>
+  </section>
+
+  <section id="thesis">
+    <h2>Thesis & Dissertation</h2>
+    <p><strong>Dissertation:</strong> Importance of Open Space in Architecture</p>
+    <p><strong>Thesis:</strong> Multi-speciality Hospital</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: princeabullx@gmail.com</p>
+    <p>Phone: +91 9368720070</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/prince-abul-856416282" target="_blank">Profile</a></p>
+    <p>Address: Opposite Kuwar Plaza, Faridpur (Bareilly), U.P</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Abul Hasan - Architecture Portfolio</p>
+  </footer>
+
+  <script>
+    // Simple interactive script: scroll to section smoothly
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--  -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abul Hasan Portfolio</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4;}
+    header {background:#333; color:#fff; padding:15px; text-align:center;}
+    nav {display:flex; flex-wrap:wrap; justify-content:center; background:#444;}
+    nav a {color:#fff; padding:10px 15px; text-decoration:none;}
+    nav a:hover {background:#666;}
+    section {padding:20px; display:none;}
+    section.active {display:block;}
+    h2 {color:#333;}
+    footer {background:#333; color:#fff; text-align:center; padding:10px;}
+    @media(max-width:600px){
+      nav {flex-direction:column;}
+      nav a {text-align:center;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Architecture Portfolio - Abul Hasan</h1>
+    <p>Creative Architect | Final Year B.Arch | Ganga Institute</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showPage('clinic')">Clinic</a>
+    <a href="#" onclick="showPage('housing')">Group Housing</a>
+    <a href="#" onclick="showPage('haat')">Haryana Haat</a>
+    <a href="#" onclick="showPage('shopping')">Shopping Complex</a>
+    <a href="#" onclick="showPage('hotel')">3 Star Hotel</a>
+    <a href="#" onclick="showPage('house')">Elegant House</a>
+    <a href="#" onclick="showPage('banquet')">Banquet Hall</a>
+    <a href="#" onclick="showPage('prime')">Prime City</a>
+  </nav>
+
+ Pages 
+  <section id="clinic" class="active">
+    <h2>Clinic</h2>
+    <p>A small-scale healthcare facility designed for outpatient services. Includes reception, waiting zone, consultation rooms, treatment rooms, and diagnostic facilities.</p>
+  </section>
+
+  <section id="housing">
+    <h2>Group Housing</h2>
+    <p>Planned residential development mixing 1 BHK and 3 BHK units for inclusive community living. Focus on sunlight, ventilation, and shared amenities.</p>
+  </section>
+
+  <section id="haat">
+    <h2>Haryana Haat</h2>
+    <p>Cultural and commercial space showcasing Haryana’s heritage through handicrafts, food, and art. Designed with courtyards, shaded walkways, and local materials.</p>
+  </section>
+
+  <section id="shopping">
+    <h2>Shopping Complex</h2>
+    <p>Commercial hub with retail outlets, food courts, and entertainment areas. Focus on circulation, zoning, lighting, and ventilation.</p>
+  </section>
+
+  <section id="hotel">
+    <h2>3 Star Hotel</h2>
+    <p>Luxury hospitality project integrating architecture and interior design. Emphasis on guest experience, sustainability, and operational efficiency.</p>
+  </section>
+
+  <section id="house">
+    <h2>Elegant House</h2>
+    <p>Residential design focusing on comfort, privacy, ventilation, sunlight, and aesthetics. Includes duplex layouts and modern amenities.</p>
+  </section>
+
+  <section id="banquet">
+    <h2>Banquet Hall</h2>
+    <p>Large event space with parking, safety measures, and fire systems. Designed for weddings, gatherings, and cultural functions.</p>
+  </section>
+
+  <section id="prime">
+    <h2>Prime City</h2>
+    <p>Urban residential project with single gate entry, wide roads, CCTV, rainwater harvesting, sewer line, STP plant, and underground electrification.</p>
+  </section>
+
+  <footer>
+    <p>Contact: princeabullx@gmail.com | +91 9368720070 | LinkedIn: prince-abul</p>
+    <p>&copy; 2026 Abul Hasan Portfolio</p>
+  </footer>
+
+  <script>
+    function showPage(pageId){
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html> 
+ 
+
+
+ 
+ 
+<!-- 
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abul Hasan | Architecture Portfolio</title>
+  <style>
+    body {margin:0; font-family:'Segoe UI',sans-serif; background:#f9f9f9; color:#333;}
+    header {background:#111; color:#fff; padding:40px; text-align:center;}
+    header h1 {margin:0; font-size:2.5em;}
+    header p {margin:5px 0;}
+    nav {background:#222; display:flex; justify-content:center; flex-wrap:wrap;}
+    nav a {color:#fff; padding:15px 20px; text-decoration:none; transition:0.3s;}
+    nav a:hover {background:#444;}
+    .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; padding:20px;}
+    .card {background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.3s;}
+    .card:hover {transform:scale(1.03);}
+    .card img {width:100%; height:200px; object-fit:cover;}
+    .card h3 {margin:10px; font-size:1.2em;}
+    .card p {margin:10px; font-size:0.9em; color:#555;}
+    footer {background:#111; color:#fff; text-align:center; padding:20px;}
+    /* Modal */
+    .modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;}
+    .modal-content {background:#fff; padding:20px; max-width:800px; width:90%; border-radius:8px; overflow-y:auto; max-height:90%;}
+    .close {float:right; font-size:1.5em; cursor:pointer;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Abul Hasan</h1>
+    <p>Architecture Portfolio | 2022–2027</p>
+  </header>
+
+  <nav>
+    <a href="#clinic">Clinic</a>
+    <a href="#housing">Group Housing</a>
+    <a href="#haat">Haryana Haat</a>
+    <a href="#shopping">Shopping Complex</a>
+    <a href="#hotel">3 Star Hotel</a>
+    <a href="#house">Elegant House</a>
+    <a href="#banquet">Banquet Hall</a>
+    <a href="#prime">Prime City</a>
+  </nav>
+
+
+  <div class="grid">
+    <div class="card" onclick="openModal('clinic')">
+      <img src="images/clinic.jpg" alt="Clinic Project">
+      <h3>Clinic</h3>
+      <p>Healthcare facility design with reception, consultation, and treatment rooms.</p>
+    </div>
+    <div class="card" onclick="openModal('housing')">
+      <img src="images/housing.jpg" alt="Group Housing">
+      <h3>Group Housing</h3>
+      <p>Inclusive residential design mixing 1 BHK and 3 BHK units.</p>
+    </div>
+    <div class="card" onclick="openModal('haat')">
+      <img src="images/haat.jpg" alt="Haryana Haat">
+      <h3>Haryana Haat</h3>
+      <p>Cultural hub showcasing crafts, food, and heritage of Haryana.</p>
+    </div>
+    <div class="card" onclick="openModal('shopping')">
+      <img src="images/shopping.jpg" alt="Shopping Complex">
+      <h3>Shopping Complex</h3>
+      <p>Commercial space with retail, food courts, and entertainment zones.</p>
+    </div>
+    <div class="card" onclick="openModal('hotel')">
+      <img src="images/hotel.jpg" alt="3 Star Hotel">
+      <h3>3 Star Hotel</h3>
+      <p>Luxury hospitality project focusing on guest experience and sustainability.</p>
+    </div>
+    <div class="card" onclick="openModal('house')">
+      <img src="images/house.jpg" alt="Elegant House">
+      <h3>Elegant House</h3>
+      <p>Residential duplex design emphasizing comfort, privacy, and aesthetics.</p>
+    </div>
+    <div class="card" onclick="openModal('banquet')">
+      <img src="images/banquet.jpg" alt="Banquet Hall">
+      <h3>Banquet Hall</h3>
+      <p>Event space designed for weddings and cultural gatherings.</p>
+    </div>
+    <div class="card" onclick="openModal('prime')">
+      <img src="images/prime.jpg" alt="Prime City">
+      <h3>Prime City</h3>
+      <p>Urban residential project with modern infrastructure and amenities.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Contact: princeabullx@gmail.com | +91 9368720070</p>
+    <p>&copy; 2026 Abul Hasan Portfolio</p>
+  </footer>
+
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const projectDetails = {
+      clinic: "<h2>Clinic</h2><p>A clinic is a small-scale healthcare facility designed to provide primary medical care and outpatient services. Includes reception, waiting zone, consultation rooms, treatment rooms, and diagnostic facilities.</p>",
+      housing: "<h2>Group Housing</h2><p>Planned residential development mixing 1 BHK and 3 BHK units for inclusive community living. Focus on sunlight, ventilation, and shared amenities.</p>",
+      haat: "<h2>Haryana Haat</h2><p>Cultural and commercial space showcasing Haryana’s heritage through handicrafts, food, and art. Designed with courtyards, shaded walkways, and local materials.</p>",
+      shopping: "<h2>Shopping Complex</h2><p>Commercial hub with retail outlets, food courts, and entertainment areas. Focus on circulation, zoning, lighting, and ventilation.</p>",
+      hotel: "<h2>3 Star Hotel</h2><p>Luxury hospitality project integrating architecture and interior design. Emphasis on guest experience, sustainability, and operational efficiency.</p>",
+      house: "<h2>Elegant House</h2><p>Residential design focusing on comfort, privacy, ventilation, sunlight, and aesthetics. Includes duplex layouts and modern amenities.</p>",
+      banquet: "<h2>Banquet Hall</h2><p>Large event space with parking, safety measures, and fire systems. Designed for weddings, gatherings, and cultural functions.</p>",
+      prime: "<h2>Prime City</h2><p>Urban residential project with single gate entry, wide roads, CCTV, rainwater harvesting, sewer line, STP plant, and underground electrification.</p>"
+    };
+
+    function openModal(project){
+      document.getElementById('modal-body').innerHTML = projectDetails[project];
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal(){
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html> --> -->

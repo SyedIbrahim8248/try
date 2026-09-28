@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Syed Ibrahim - Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f4f4f9;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "• ";
+      color: #2c3e50;
+    }
+    .contact {
+      font-size: 14px;
+      color: #555;
+    }
+    .skills, .projects {
+      columns: 2;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <!-- Replace profile.jpg with your actual photo file -->
+      <img src="profile.jpg" alt="Profile Photo">
+      <h1>Syed Ibrahim</h1>
+      <p>Full Stack Developer | Software Engineer</p>
+      <p class="contact">Email: your.email@example.com | Phone: +91-XXXXXXXXXX</p>
+      <p class="contact">Languages: English, Hindi, Urdu</p>
+    </div>
+
+    <div class="section">
+      <h2>Professional Summary</h2>
+      <p>Full Stack Developer with expertise in Java, HTML, CSS, JavaScript, Node.js, React, Git, and GitHub. Skilled in building dynamic, responsive web applications and integrating APIs. Strong academic background with hands-on project experience.</p>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li>B.Tech in Computer Science Engineering – CGPA: 8.0</li>
+        <li>12th Grade: 78%</li>
+        <li>10th Grade: 75%</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Technical Skills</h2>
+      <ul class="skills">
+        <li>Java</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Node.js, React</li>
+        <li>Git, GitHub</li>
+        <li>API Integration</li>
+        <li>Responsive Web Design</li>
+        <li>UI/UX Animation</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Strengths</h2>
+      <ul>
+        <li>Strong problem-solving ability</li>
+        <li>Quick learner and adaptable</li>
+        <li>Creative approach to UI/UX design</li>
+        <li>Team collaboration and communication</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Weaknesses</h2>
+      <ul>
+        <li>Sometimes over-focus on details</li>
+        <li>Perfectionist with design elements</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <ul class="projects">
+        <li>ATM Machine Simulation</li>
+        <li>Car Racing Game</li>
+        <li>Flip-Flop Circuit Project</li>
+        <li>Amazon Clone</li>
+        <li>Chat Application</li>
+        <li>Library Management System</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Hobbies</h2>
+      <p>Web development experiments, creative coding and animations, cricket, building interactive games.</p>
+    </div>
+
+    <div class="footer">
+      <p>Generated Resume - Syed Ibrahim</p>
+    </div>
+  </div>
+
+  <script>
+    // Optional: Add a button to auto-print as PDF
+    window.onload = function() {
+      const btn = document.createElement("button");
+      btn.textContent = "Export as PDF";
+      btn.style.display = "block";
+      btn.style.margin = "20px auto";
+      btn.onclick = () => window.print();
+      document.body.insertBefore(btn, document.body.firstChild);
+    };
+  </script>
+</body>
+</html>

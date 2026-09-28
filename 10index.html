@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Weather App</title>
+  <link rel="stylesheet" href="5style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Global Weather App</h1>
+
+    <input type="text" id="city" placeholder="Enter city" />
+    <input type="text" id="state" placeholder="Enter state / region (optional)" />
+    <input type="text" id="country" placeholder="Enter country code (IN, US, GB)" />
+
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="error" class="error"></div>
+
+    <div id="weather-result" class="weather-result">
+      <h2 id="city-name"></h2>
+      <p id="temperature"></p>
+      <p id="description"></p>
+      <p id="humidity"></p>
+      <p id="wind"></p>
+      <p id="feels"></p>
+    </div>
+  </div>
+
+  <script src="6script.js"></script>
+</body>
+</html>

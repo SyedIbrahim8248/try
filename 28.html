@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Ibrahim | Creative Portfolio</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ff9a9e;
+    }
+    #hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    #hero h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #222;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff9a9e;
+      color: #222;
+    }
+    #projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Creative Space</h1>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Welcome to my world of creativity 🚀</h2>
+    <button onclick="showMessage()">Click Me</button>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">ATM Machine App</div>
+    <div class="card">Car Racing Game</div>
+    <div class="card">Amazon Clone</div>
+    <div class="card">Chat Application</div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m Syed Ibrahim, a full-stack developer passionate about creative coding, games, and interactive web projects.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: syed@example.com</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Syed Ibrahim</p>
+  </footer>
+
+  <script>
+    function showMessage() {
+      alert("Hello! Welcome to my creative site 🚀");
+    }
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.style.background = '#ff9a9e';
+        card.style.color = '#fff';
+      });
+    });
+  </script>
+</body>
+</html>
